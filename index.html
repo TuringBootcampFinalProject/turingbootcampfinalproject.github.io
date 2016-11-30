@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+	<title>Finder - TB Final Project</title>
+
+	<script
+  src="http://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- <link rel="stylesheet" href="awesomplete.css" />
+<script src="awesomplete.js" async></script>  -->
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="js/classie.js"></script>
+<script src="js/themoviedb.min.js"></script>
+<script src="js/process.js"></script>
+
+
+</head>
+<body>
+
+
+  <script>
+
+</script>
+
+
+	<div class="container">
+	    <section class="content">
+	                <h1>Please enter your selection</h1>
+
+	             
+	                <span class="input input--ichiro">
+	                    <input class="input__field input__field--ichiro runtime-select" type="text" id="input-25" />
+	                    <label class="input__label input__label--ichiro" for="input-25">
+	                        <span class="input__label-content input__label-content--ichiro">Runtime</span>
+	                    </label>
+	                </span>
+
+	                
+	            <!--   
+	           <select class="genres-select" id="input-26" /></select>
+	            	 -->
+	                
+	                <span class="input input--ichiro">
+	                    <input class="input__field input__field--ichiro" type="text" id="input-26" list="option" />
+						<datalist id="option" class="genres-select">
+						</datalist>
+		                <label class="input__label input__label--ichiro" for="input-26">
+	                        <span class="input__label-content input__label-content--ichiro">Genre</span>
+	                    </label>
+	                </span>
+
+					
+	               
+
+
+	                <span class="input input--ichiro">
+	                    <input class="input__field input__field--ichiro rating-select" type="text" id="input-27" />
+	                    <label class="input__label input__label--ichiro" for="input-27">
+	                        <span class="input__label-content input__label-content--ichiro">Rating</span>
+	                    </label>
+	                </span>
+
+	                 <span class="input input--ichiro">
+	                    <input class="input__field input__field--ichiro year-select" type="text" id="input-28" />
+	                    <label class="input__label input__label--ichiro" for="input-28">
+	                        <span class="input__label-content input__label-content--ichiro">Year</span>
+	                    </label>
+	                </span>
+	            </section>
+	            
+	        </div>
+
+
+
+
+	   <div class="container">
+	    <div class="row">
+			<div class="col-sm-4 col-md-4">
+			</div>
+			<div class="col-sm-4 col-md-4">
+				  <button type="button" class="btn btn-default searchbutton">
+				    <span class="glyphicon glyphicon-search"></span> Search
+				  </button>
+			</div>
+			<div class="col-sm-4 col-md-4 pull-right">
+			</div>
+		</div>
+		</div>
+
+ <div class="container">
+
+				<ul class="movie-list"></ul>
+
+</div>
+
+
+
+	        <script>
+	            (function() {
+	                // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+	                if (!String.prototype.trim) {
+	                    (function() {
+	                        // Make sure we trim BOM and NBSP
+	                        var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+	                        String.prototype.trim = function() {
+	                            return this.replace(rtrim, '');
+	                        };
+	                    })();
+	                }
+	                [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+	                    // in case the input is already filled..
+	                    if( inputEl.value.trim() !== '' ) {
+	                        classie.add( inputEl.parentNode, 'input--filled' );
+	                    }
+	                    // events:
+	                    inputEl.addEventListener( 'focus', onInputFocus );
+	                    inputEl.addEventListener( 'blur', onInputBlur );
+	                } );
+	                function onInputFocus( ev ) {
+	                    classie.add( ev.target.parentNode, 'input--filled' );
+	                }
+	                function onInputBlur( ev ) {
+	                    if( ev.target.value.trim() === '' ) {
+	                        classie.remove( ev.target.parentNode, 'input--filled' );
+	                    }
+	                }
+	            })();
+	        </script>
+
+
+	      
+
+</body>
+</html>
